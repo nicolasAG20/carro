@@ -9,5 +9,20 @@ package carrobrumbrum.models;
  * @author Nico
  */
 public class Llantas {
+    private String tipo; 
+    private int limiteVelocidad; 
+
+    public Llantas(String tipo, int limiteVelocidad) {
+        this.tipo = tipo;
+        this.limiteVelocidad = limiteVelocidad;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public int getLimiteVelocidad() {
+        return limiteVelocidad;
+    }
     
 }

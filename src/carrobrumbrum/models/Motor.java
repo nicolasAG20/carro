@@ -4,10 +4,41 @@
  */
 package carrobrumbrum.models;
 
+import carrobrumbrum.exceptions.LimiteMotorException;
+
 /**
  *
  * @author Nico
  */
 public class Motor {
+    private String cilindraje; 
+    private int velocidadMax; 
+    private int velocidadActual=0; 
+
+    public Motor(String cilindraje, int velocidadMax) {
+        this.cilindraje = cilindraje;
+        this.velocidadMax = velocidadMax;
+    }
+    
+    public void acelerar(int velocidad) throws LimiteMotorException{
+        this.velocidadActual+= velocidad; 
+        if(this.velocidadActual>velocidadMax){
+            throw new LimiteMotorException(); 
+        }
+    }
+    
+    public int getVelocidadMax() {
+        return velocidadMax;
+    }
+
+    public String getCilindraje() {
+        return cilindraje;
+    }
+
+    public int getVelocidadActual() {
+        return velocidadActual;
+    }
+    
+    
     
 }
