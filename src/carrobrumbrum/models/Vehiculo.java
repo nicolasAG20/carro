@@ -44,7 +44,6 @@ public class Vehiculo {
             encendido= false; 
         }else if(this.motor.getVelocidadActual()>60){
             this.accidentado = true;
-            
             throw new velocidadMayor60Exception();        
         }      
     }

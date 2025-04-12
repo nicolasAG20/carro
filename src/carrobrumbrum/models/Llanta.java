@@ -12,9 +12,22 @@ public class Llanta {
     private String tipo; 
     private int limiteVelocidad; 
 
-    public Llanta(String tipo, int limiteVelocidad) {
+    public Llanta(String tipo) {
         this.tipo = tipo;
-        this.limiteVelocidad = limiteVelocidad;
+        switch (tipo) {
+            case "Buenas":
+                this.limiteVelocidad= 110;
+                break;
+            case "baratas":
+                this.limiteVelocidad= 50;
+                break;
+            case "bonitas":
+                this.limiteVelocidad= 70;
+                break;
+            default:
+                break;
+        }
+        
     }
 
     public String getTipo() {

@@ -95,12 +95,10 @@ public class Archivo extends javax.swing.JFrame {
             try {
                 lector = new Lector(archivo);
                 String[] atributos = lector.devolverTextoSeparado();
-                String CilindrajeMotor= atributos[0]; 
-                String tipoLlanta= atributos[2]; 
-                int velocidadMax= Integer.parseInt(atributos[1]); 
-                int limiteVelocidad= Integer.parseInt(atributos[3]); 
-                Motor motor = new Motor(CilindrajeMotor, velocidadMax);
-                Llanta llanta = new Llanta(tipoLlanta, limiteVelocidad);
+                String CilindrajeMotor= atributos[1]; 
+                String tipoLlanta= atributos[3]; 
+                Motor motor = new Motor(CilindrajeMotor );
+                Llanta llanta = new Llanta(tipoLlanta);
                 Vehiculo automovil = new Vehiculo(motor, llanta);
                 VehiculoVentana ventana = new VehiculoVentana (automovil);
                 ventana.setVisible (true);
