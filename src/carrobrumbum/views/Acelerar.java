@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  *
  * @author edgar
  */
-public class Acelerar extends javax.swing.JFrame {
+public class Acelerar extends javax.swing.JDialog {
     private Vehiculo automovil;
     private VehiculoVentana ventanaPrincipal;
 
@@ -108,7 +108,7 @@ public class Acelerar extends javax.swing.JFrame {
             this.automovil.acelerarMotor(velocidad);           
         }catch(LimiteMotorException e){
             this.dispose();
-            gifAccidente ventanaAccidente = new gifAccidente (this,true);
+            gifAccidente ventanaAccidente = new gifAccidente (ventanaPrincipal,true);
             ventanaAccidente.setVisible(true);
         }catch(ApagadoException e){
             JOptionPane.showMessageDialog(this, e.getMessage());

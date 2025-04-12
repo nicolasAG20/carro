@@ -90,6 +90,10 @@ public class Vehiculo {
     public Motor getMotor() {
         return motor;
     }
+
+    public Llanta getLlanta() {
+        return llanta;
+    }
     
     
     

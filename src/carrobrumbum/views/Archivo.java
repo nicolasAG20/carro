@@ -13,6 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 
 /**
@@ -26,6 +27,11 @@ public class Archivo extends javax.swing.JFrame {
      */
     public Archivo() {
         initComponents();
+        try{
+            this.setIconImage(new ImageIcon(getClass().getResource("/carrobrumbrum/images/carro.png")).getImage());
+        }catch(Exception e){
+
+        } 
     }
 
     /**

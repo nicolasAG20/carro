@@ -74,6 +74,7 @@ public class gifPatinando extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
         public void sonidoPatinando() {
         URL soundUrl = getClass().getResource("/carrobrumbrum/sounds/carroPatinando.wav");
