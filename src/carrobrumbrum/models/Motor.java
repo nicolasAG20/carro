@@ -27,6 +27,15 @@ public class Motor {
         }
     }
     
+    public void frenar(int velocidadDeFrenado)throws PatinarException{
+        if(velocidadDeFrenado>velocidadActual){
+            this.velocidadActual=0; 
+            throw new PatinarException();
+        }else{
+            this.velocidadActual-=velocidadDeFrenado;
+        }
+    }
+    
     public int getVelocidadMax() {
         return velocidadMax;
     }
@@ -37,6 +46,10 @@ public class Motor {
 
     public int getVelocidadActual() {
         return velocidadActual;
+    }
+
+    public void setVelocidadActual(int velocidadActual) {
+        this.velocidadActual = velocidadActual;
     }
     
     

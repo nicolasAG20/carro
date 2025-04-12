@@ -5,6 +5,7 @@
 package carrobrumbrum.models;
 
 import carrobrumbrum.exceptions.ApagadoException;
+import carrobrumbrum.exceptions.DetenidoException;
 import carrobrumbrum.exceptions.EncendidoException;
 import carrobrumbrum.exceptions.LimiteMotorException;
 import carrobrumbrum.exceptions.velocidadMayor60Exception;
@@ -17,7 +18,7 @@ public class Vehiculo {
     private boolean encendido= false; 
     private boolean accidentado= false; 
     private Motor motor;
-    private Llantas llanta; 
+    private Llanta llanta; 
 
     public Vehiculo() {
     }
@@ -48,9 +49,26 @@ public class Vehiculo {
             try{
                 this.motor.acelerar(velocidad);
             }catch(LimiteMotorException e){
-                this.accidentado=true; 
+                this.accidentado=true;
                 apagar();
             }
+        }
+        
+    }
+    
+    public void frenar(int valorDeFrenado)throws PatinarException, DetenidoException{
+        if(valorDeFrenado>this.llanta.getLimiteVelocidad()){
+            this.motor.setVelocidadActual(0);
+            throw new PatinarException();
+        }else if(this.motor.getVelocidadActual()==0){
+            throw new DetenidoException();
+        }else{
+            try{
+                this.motor.frenar(valorDeFrenado);
+            }catch(PatinarException e){
+                this.motor.setVelocidadActual(0);
+            }
+            
         }
         
     }
