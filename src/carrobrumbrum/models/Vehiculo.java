@@ -89,12 +89,7 @@ public class Vehiculo {
         }else if(this.motor.getVelocidadActual()==0){
             throw new DetenidoException();
         }else{
-            try{
-                this.motor.frenar(valorDeFrenado);
-            }catch(PatinarException e){
-                this.motor.setVelocidadActual(0);
-                
-            }
+            this.motor.frenar(valorDeFrenado);
             
         }
         
