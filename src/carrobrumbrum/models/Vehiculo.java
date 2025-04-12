@@ -21,8 +21,12 @@ public class Vehiculo {
     private Motor motor;
     private Llanta llanta; 
 
-    public Vehiculo() {
+    public Vehiculo(Motor motor, Llanta llanta) {
+        this.motor = motor;
+        this.llanta = llanta;
     }
+
+    
     
     public void encender()throws EncendidoException{
         if(encendido){
@@ -82,6 +86,7 @@ public class Vehiculo {
     public boolean isEncendido() {
         return encendido;
     }
+    
     
     
     

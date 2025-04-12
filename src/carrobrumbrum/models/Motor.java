@@ -14,7 +14,7 @@ import carrobrumbrum.exceptions.PatinarException;
 public class Motor {
     private String cilindraje; 
     private int velocidadMax; 
-    private int velocidadActual =70; 
+    private int velocidadActual =0; 
 
     public Motor(String cilindraje, int velocidadMax) {
         this.cilindraje = cilindraje;
@@ -50,7 +50,7 @@ public class Motor {
     }
 
     public void setVelocidadActual(int velocidadActual) {
-        this.velocidadActual = velocidadActual;
+         this.velocidadActual = velocidadActual;
     }
     
     
