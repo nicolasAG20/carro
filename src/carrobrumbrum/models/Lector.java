@@ -11,20 +11,28 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- *
- * @author Nico
+ * Clase para leer y procesar archivos de texto plano
+ * @author Nicolas Agudelo Grajales
  */
 public class Lector {
     File archivo; 
     FileReader lector; 
     BufferedReader buffer; 
-
+    /**
+     * Constrcutor que incializa el lector con un archivo especifico
+     * @param archivo Archivo de configuracion a leer
+     * @throws FileNotFoundException Si el archivo no existe o no puede leerse
+     */
     public Lector(File archivo) throws FileNotFoundException {
         this.archivo = archivo;
         this.lector= new FileReader(archivo);
         this.buffer = new BufferedReader(lector);
     }
-    
+    /**
+     * Lee el archvio y devuelve un array con los valores de configuracion
+     * @return Array de Strin con los valores en el formato
+     * @throws IOException Si ocurre un error de lectura del archivo
+     */
     public String[] devolverTextoSeparado() throws IOException{
         String[] textoSeparado= new String[4]; 
         String linea; 
@@ -44,7 +52,12 @@ public class Lector {
         
         return textoSeparado; 
     }
-    
+  
+    /**
+     * Separa una linea de texto en dospartes usando el primer espacio como delimitador
+     * @param textoLinea de texto a separar
+     * @return Array con dos elementos
+     */
     public String[] separarEspacios(String texto){
         String[] textoSeparado = new String[2];
         String textoObtenido="";
