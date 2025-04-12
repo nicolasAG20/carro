@@ -6,8 +6,8 @@ package carrobrumbrum.models;
 
 /**
  *
- * @author Nico
+ * @author edgar
  */
-class PatinarException extends Exception {
+public class Archivo {
     
 }

@@ -5,6 +5,7 @@
 package carrobrumbrum.models;
 
 import carrobrumbrum.exceptions.LimiteMotorException;
+import carrobrumbrum.exceptions.PatinarException;
 
 /**
  *
@@ -13,7 +14,7 @@ import carrobrumbrum.exceptions.LimiteMotorException;
 public class Motor {
     private String cilindraje; 
     private int velocidadMax; 
-    private int velocidadActual=0; 
+    private int velocidadActual =70; 
 
     public Motor(String cilindraje, int velocidadMax) {
         this.cilindraje = cilindraje;

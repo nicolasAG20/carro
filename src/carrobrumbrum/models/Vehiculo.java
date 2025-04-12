@@ -8,6 +8,7 @@ import carrobrumbrum.exceptions.ApagadoException;
 import carrobrumbrum.exceptions.DetenidoException;
 import carrobrumbrum.exceptions.EncendidoException;
 import carrobrumbrum.exceptions.LimiteMotorException;
+import carrobrumbrum.exceptions.PatinarException;
 import carrobrumbrum.exceptions.velocidadMayor60Exception;
 
 /**
@@ -37,9 +38,10 @@ public class Vehiculo {
         }else if(encendido){
             encendido= false; 
         }else if(this.motor.getVelocidadActual()>60){
-            throw new velocidadMayor60Exception();
+            this.accidentado = true;
             
-        }
+            throw new velocidadMayor60Exception();        
+        }      
     }
     
     public void acelerarMotor(int velocidad) throws ApagadoException, LimiteMotorException{
@@ -51,15 +53,17 @@ public class Vehiculo {
             }catch(LimiteMotorException e){
                 this.accidentado=true;
                 apagar();
+                throw e;
             }
         }
         
     }
     
-    public void frenar(int valorDeFrenado)throws PatinarException, DetenidoException{
+    public void frenarBruscamente(int valorDeFrenado)throws PatinarException, DetenidoException{
         if(valorDeFrenado>this.llanta.getLimiteVelocidad()){
             this.motor.setVelocidadActual(0);
             throw new PatinarException();
+            
         }else if(this.motor.getVelocidadActual()==0){
             throw new DetenidoException();
         }else{
@@ -67,11 +71,18 @@ public class Vehiculo {
                 this.motor.frenar(valorDeFrenado);
             }catch(PatinarException e){
                 this.motor.setVelocidadActual(0);
+                throw e;
             }
             
         }
         
     }
+
+    
+    public boolean isEncendido() {
+        return encendido;
+    }
+    
     
     
 }

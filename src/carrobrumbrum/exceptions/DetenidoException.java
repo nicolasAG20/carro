@@ -14,6 +14,5 @@ public class DetenidoException extends RuntimeException {
         super("El vehiculo esta detenido");
     }
     
-    
-    
+      
 }
