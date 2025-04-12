@@ -110,6 +110,7 @@ public class Acelerar extends javax.swing.JDialog {
             this.dispose();
             gifAccidente ventanaAccidente = new gifAccidente (ventanaPrincipal,true);
             ventanaAccidente.setVisible(true);
+            ventanaPrincipal.actualizar();
         }catch(ApagadoException e){
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
