@@ -117,11 +117,11 @@ public class Frenar extends javax.swing.JDialog {
         }catch(DetenidoException e){
             JOptionPane.showMessageDialog(this, e.getMessage());
         }catch(PatinarException e){
-            this.dispose();
             gifPatinando ventanaPatinando = new gifPatinando (ventanaPrincipal,true);
             ventanaPatinando.setVisible(true);
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
+        this.dispose();
     }//GEN-LAST:event_txtSiguienteMouseClicked
 
 

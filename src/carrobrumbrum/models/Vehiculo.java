@@ -52,13 +52,7 @@ public class Vehiculo {
         if(!encendido){
             throw new ApagadoException(); 
         }else{
-            try{
-                this.motor.acelerar(velocidad);
-            }catch(LimiteMotorException e){
-                this.accidentado=true;
-                apagar();
-                
-            }
+            this.motor.acelerar(velocidad);
         }
         
     }

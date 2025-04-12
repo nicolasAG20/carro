@@ -25,6 +25,13 @@ public class VehiculoVentana extends javax.swing.JFrame {
         initComponents();
         this.automovil = automovil;
         this.setLocationRelativeTo(null);
+        Llanta llanta = automovil.getLlanta();
+        lblTipoLlantas.setText(llanta.getTipo());
+        lblLimiteLlantas.setText(String.valueOf(llanta.getLimiteVelocidad()));
+        
+        Motor motorm = automovil.getMotor();
+        lblTipoMotor.setText(String.valueOf(motorm.getCilindraje()));
+        lblLimiteMotor.setText(String.valueOf(motorm.getVelocidadMax()));
         try{
             this.setIconImage(new ImageIcon(getClass().getResource("/carrobrumbrum/images/carro.png")).getImage());
         }catch(Exception e){
@@ -378,6 +385,7 @@ public class VehiculoVentana extends javax.swing.JFrame {
 
     private void btnFrenarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFrenarMouseEntered
         mouseEntered(btnFrenar);
+        actualizar();
     }//GEN-LAST:event_btnFrenarMouseEntered
 
     private void btnFrenarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFrenarMouseExited
@@ -392,10 +400,12 @@ public class VehiculoVentana extends javax.swing.JFrame {
 
     private void btnAcelerarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAcelerarMouseEntered
         mouseEntered(btnAcelerar);
+        actualizar();
     }//GEN-LAST:event_btnAcelerarMouseEntered
 
     private void btnAcelerarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAcelerarMouseExited
         mouseExited(btnAcelerar);
+        actualizar();
     }//GEN-LAST:event_btnAcelerarMouseExited
 
     private void btnEncenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEncenderMouseClicked
@@ -405,7 +415,7 @@ public class VehiculoVentana extends javax.swing.JFrame {
         
         Motor motorm = automovil.getMotor();
         lblTipoMotor.setText(String.valueOf(motorm.getCilindraje()));
-        lblTipoMotor.setText(String.valueOf(motorm.getVelocidadMax()));
+        lblLimiteMotor.setText(String.valueOf(motorm.getVelocidadMax()));
  
         try{
             this.automovil.encender();
@@ -430,6 +440,7 @@ public class VehiculoVentana extends javax.swing.JFrame {
             this.automovil.apagar();
             gifApagar ventanaApagar = new gifApagar (this,true);
             ventanaApagar.setVisible(true);
+            actualizar();
         } catch (ApagadoException e) {
             JOptionPane.showMessageDialog(this,e.getMessage());                
         } catch (velocidadMayor60Exception e){

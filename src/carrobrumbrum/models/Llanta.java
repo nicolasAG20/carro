@@ -15,7 +15,7 @@ public class Llanta {
     public Llanta(String tipo) {
         this.tipo = tipo;
         switch (tipo) {
-            case "Buenas":
+            case "buenas":
                 this.limiteVelocidad= 110;
                 break;
             case "baratas":

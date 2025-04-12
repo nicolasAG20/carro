@@ -8,8 +8,7 @@ package carrobrumbrum.exceptions;
  *
  * @author Nico
  */
-public class LimiteMotorException extends RuntimeException
-{
+public class LimiteMotorException extends Exception{
 
     public LimiteMotorException() {
          super("el motor ha pasado sus limites");
