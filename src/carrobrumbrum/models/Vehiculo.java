@@ -53,7 +53,7 @@ public class Vehiculo {
             }catch(LimiteMotorException e){
                 this.accidentado=true;
                 apagar();
-                throw e;
+                
             }
         }
         
@@ -71,7 +71,7 @@ public class Vehiculo {
                 this.motor.frenar(valorDeFrenado);
             }catch(PatinarException e){
                 this.motor.setVelocidadActual(0);
-                throw e;
+                
             }
             
         }
@@ -81,6 +81,10 @@ public class Vehiculo {
     
     public boolean isEncendido() {
         return encendido;
+    }
+
+    public Motor getMotor() {
+        return motor;
     }
     
     

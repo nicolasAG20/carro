@@ -111,8 +111,7 @@ public class Frenar extends javax.swing.JDialog {
 
     private void txtSiguienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSiguienteMouseClicked
         try{
-            int valorFrenado = Integer.parseInt(txtFrenar.getText());
-            
+            int valorFrenado = Integer.parseInt(txtFrenar.getText());           
             this.automovil.frenarBruscamente(valorFrenado);
             this.dispose();
         }catch(DetenidoException e){

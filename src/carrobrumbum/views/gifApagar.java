@@ -13,6 +13,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -26,6 +27,11 @@ public class gifApagar extends javax.swing.JDialog {
     public gifApagar(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        try{
+            this.setIconImage(new ImageIcon(getClass().getResource("/carrobrumbrum/images/carro.png")).getImage());
+        }catch(Exception e){
+
+        }         
         this.sonidoApagar();
     }
 

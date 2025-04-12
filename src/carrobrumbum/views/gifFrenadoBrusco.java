@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package carrobrumbum.views;
 
@@ -19,20 +19,19 @@ import javax.swing.ImageIcon;
  *
  * @author edgar
  */
-public class gifPatinando extends javax.swing.JDialog {
+public class gifFrenadoBrusco extends javax.swing.JDialog {
 
     /**
-     * Creates new form Patinando
+     * Creates new form gifFrenadoBrusco
      */
-    public gifPatinando(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public gifFrenadoBrusco(java.awt.Frame parent, boolean modal) {
         initComponents();
         try{
             this.setIconImage(new ImageIcon(getClass().getResource("/carrobrumbrum/images/carro.png")).getImage());
         }catch(Exception e){
 
-        } 
-       this.sonidoPatinando();
+        }         
+        this.sonidoFrenadoBrusco();       
     }
 
     /**
@@ -47,9 +46,10 @@ public class gifPatinando extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/carrobrumbrum/gif/patinando.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/carrobrumbrum/gif/frenadoBrusco.gif"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -74,9 +74,10 @@ public class gifPatinando extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-        public void sonidoPatinando() {
-        URL soundUrl = getClass().getResource("/carrobrumbrum/sounds/carroPatinando.wav");
+    public void sonidoFrenadoBrusco() {
+        URL soundUrl = getClass().getResource("/carrobrumbrum/sounds/frenadoBrusco.wav");
         try {           
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(soundUrl);
             Clip clip = AudioSystem.getClip();

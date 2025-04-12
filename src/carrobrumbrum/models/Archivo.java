@@ -4,10 +4,13 @@
  */
 package carrobrumbrum.models;
 
+import java.io.RandomAccessFile;
+
 /**
  *
  * @author edgar
  */
 public class Archivo {
+
     
 }
