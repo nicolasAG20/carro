@@ -40,6 +40,7 @@ public class Vehiculo {
         if(!encendido){
             throw new ApagadoException();
         }else if(encendido){
+            this.motor.setVelocidadActual(0);
             encendido= false; 
         }else if(this.motor.getVelocidadActual()>60){
             this.accidentado = true;
