@@ -16,9 +16,22 @@ public class Motor {
     private int velocidadMax; 
     private int velocidadActual =0; 
 
-    public Motor(String cilindraje, int velocidadMax) {
+    public Motor(String cilindraje) {
         this.cilindraje = cilindraje;
-        this.velocidadMax = velocidadMax;
+        switch (cilindraje) {
+            case "1000":
+                this.velocidadMax= 100;
+                break;
+            case "2000":
+                this.velocidadMax= 160;
+                break;
+            case "3000":
+                this.velocidadMax= 220;
+                break;
+            default:
+                break;
+        }
+        
     }
     
     public void acelerar(int velocidad) throws LimiteMotorException{
