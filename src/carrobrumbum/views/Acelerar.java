@@ -109,11 +109,7 @@ public class Acelerar extends javax.swing.JDialog {
             this.automovil.apagar();
             gifAccidente ventanaAccidente = new gifAccidente (ventanaPrincipal,true);
             ventanaAccidente.setVisible(true);
-<<<<<<< HEAD
-            this.dispose();
-=======
             ventanaPrincipal.actualizar();
->>>>>>> 8c0ebed073b5edde0cca98090a61758400d5eafc
         }catch(ApagadoException e){
             JOptionPane.showMessageDialog(this, "el carro esta apagado");   
             this.dispose();
