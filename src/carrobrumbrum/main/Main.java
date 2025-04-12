@@ -9,8 +9,8 @@ import carrobrumbum.views.Archivo;
 import carrobrumbum.views.VehiculoVentana;
 
 /**
- *
- * @author edgar
+ * Clase principal que inicio la aplicacion de simulacion de vehiculos
+ * @author Vanessa Toro Sepulveda
  */
 public class Main {
     public static void main(String[] args) {
