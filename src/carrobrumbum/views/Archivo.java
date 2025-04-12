@@ -4,8 +4,15 @@
  */
 package carrobrumbum.views;
 
+import carrobrumbrum.models.Lector;
+import carrobrumbrum.models.Llanta;
+import carrobrumbrum.models.Motor;
 import carrobrumbrum.models.Vehiculo;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 
 /**
@@ -84,10 +91,26 @@ public class Archivo extends javax.swing.JFrame {
         int resultado = seleccionarArchivo.showOpenDialog(null);
         if(resultado == JFileChooser.APPROVE_OPTION){
             File archivo = new File(seleccionarArchivo.getSelectedFile().getAbsolutePath());
-                    
-            Vehiculo automovil = new Vehiculo();
-            VehiculoVentana ventana = new VehiculoVentana (automovil);
-            ventana.setVisible (true);
+            Lector lector;
+            try {
+                lector = new Lector(archivo);
+                String[] atributos = lector.devolverTextoSeparado();
+                String CilindrajeMotor= atributos[0]; 
+                String tipoLlanta= atributos[2]; 
+                int velocidadMax= Integer.parseInt(atributos[1]); 
+                int limiteVelocidad= Integer.parseInt(atributos[3]); 
+                Motor motor = new Motor(CilindrajeMotor, velocidadMax);
+                Llanta llanta = new Llanta(tipoLlanta, limiteVelocidad);
+                Vehiculo automovil = new Vehiculo(motor, llanta);
+                VehiculoVentana ventana = new VehiculoVentana (automovil);
+                ventana.setVisible (true);
+                this.dispose(); 
+            } catch (FileNotFoundException ex) {
+                System.out.println("archivo no encontrado");
+            } catch (IOException ex) {
+                System.out.println("error leyendo el archivo");
+            }
+            
         }
     }//GEN-LAST:event_btnSeleccionarArchivoMouseClicked
 
