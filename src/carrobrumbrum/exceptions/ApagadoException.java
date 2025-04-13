@@ -13,6 +13,6 @@ public class ApagadoException extends RuntimeException {
     /**
      */
     public ApagadoException() {
-        super("el carro ya esta apagado");
+        super("El carro esta apagado");
     }
 }

@@ -11,7 +11,7 @@ package carrobrumbrum.exceptions;
 public class EncendidoException extends RuntimeException{
 
     public EncendidoException() {
-        super("El carro ya esta encendido");
+        super("El carro esta encendido");
     }
     
     

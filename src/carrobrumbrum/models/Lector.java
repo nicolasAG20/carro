@@ -55,7 +55,7 @@ public class Lector {
   
     /**
      * Separa una linea de texto en dospartes usando el primer espacio como delimitador
-     * @param textoLinea de texto a separar
+     * @param texto de texto a separar
      * @return Array con dos elementos
      */
     public String[] separarEspacios(String texto){

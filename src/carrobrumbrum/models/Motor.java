@@ -56,6 +56,7 @@ public class Motor {
      * @throws PatinarException Si el valor de frenado es mayor que la velocidad actual
      */
     public void frenar(int velocidadDeFrenado)throws PatinarException{
+        
         if(velocidadDeFrenado>velocidadActual){
             this.velocidadActual=0; 
             throw new PatinarException();

@@ -113,15 +113,16 @@ public class Frenar extends javax.swing.JDialog {
         try{
             int valorFrenado = Integer.parseInt(txtFrenar.getText());           
             this.automovil.frenarBruscamente(valorFrenado);
+            ventanaPrincipal.actualizar();           
             this.dispose();
         }catch(DetenidoException e){
+            this.dispose();
             JOptionPane.showMessageDialog(this, e.getMessage());
         }catch(PatinarException e){
+            this.dispose();
             gifPatinando ventanaPatinando = new gifPatinando (ventanaPrincipal,true);
-            ventanaPatinando.setVisible(true);
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            ventanaPatinando.setVisible(true);          
         }
-        this.dispose();
     }//GEN-LAST:event_txtSiguienteMouseClicked
 
 
