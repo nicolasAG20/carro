@@ -114,7 +114,7 @@ public class Acelerar extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "el carro esta apagado");   
             
         }
-        this.dispose();
+        this.dispose();   
     }//GEN-LAST:event_btnSiguienteMouseClicked
 
 
