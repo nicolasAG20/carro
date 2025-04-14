@@ -21,13 +21,13 @@ public class Llanta {
     public Llanta(String tipo) {
         this.tipo = tipo;
         switch (tipo) {
-            case "buenas":
+            case "Buenas":
                 this.limiteVelocidad= 110;
                 break;
-            case "baratas":
+            case "Baratas":
                 this.limiteVelocidad= 50;
                 break;
-            case "bonitas":
+            case "Bonitas":
                 this.limiteVelocidad= 70;
                 break;
             default:

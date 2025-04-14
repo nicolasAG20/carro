@@ -103,18 +103,18 @@ public class Acelerar extends javax.swing.JDialog {
         try{
             int velocidad = Integer.parseInt(this.txtVelocidad.getText());
             this.automovil.acelerarMotor(velocidad);
+            ventanaPrincipal.actualizar();
             this.dispose();
         }catch(LimiteMotorException e){
             this.automovil.getMotor().setVelocidadActual(0);
             this.automovil.apagar();
-            gifAccidente ventanaAccidente = new gifAccidente (ventanaPrincipal,true);
-            ventanaAccidente.setVisible(true);
             ventanaPrincipal.actualizar();
-        }catch(ApagadoException e){
-            JOptionPane.showMessageDialog(this, "el carro esta apagado");   
-            
+            this.dispose();
+            gifAccidente ventanaAccidente = new gifAccidente (ventanaPrincipal,true);
+            ventanaPrincipal.actualizar();
+            ventanaAccidente.setVisible(true);           
         }
-        this.dispose();   
+
     }//GEN-LAST:event_btnSiguienteMouseClicked
 
 

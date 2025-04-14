@@ -12,7 +12,7 @@ package carrobrumbrum.exceptions;
 public class PatinarException extends RuntimeException{
 
     public PatinarException() {
-        super("el carro esta patinando");
+        super("El carro esta patinando");
     }
     
 }

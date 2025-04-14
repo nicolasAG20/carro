@@ -11,7 +11,7 @@ package carrobrumbrum.exceptions;
 public class LimiteMotorException extends Exception{
 
     public LimiteMotorException() {
-         super("el motor ha pasado sus limites");
+         super("El motor ha pasado sus limites");
     }
      
 }
